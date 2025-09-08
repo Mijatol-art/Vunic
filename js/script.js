@@ -1,8 +1,3 @@
-/*
-Configuration
-------------------------
-If something doesn't work please contact me on discord (Astronawta#0012).
-*/
 
 const config = {
     serverInfo: {
@@ -23,7 +18,6 @@ const config = {
     }
 }
 
-/*If you want to change website color go to /css/global.css and in :root {} is a color pallete (don't change names of variables, change only values)*/
 
 
 
@@ -40,7 +34,6 @@ const config = {
 
 
 
-/*If you want everything to work as it should and you don't understand what is written here, don't touch it :D*/
 
 
 /*Mobile navbar (open, close)*/
@@ -234,3 +227,4 @@ const setDataFromConfigToHtml = async () => {
 
 
 setDataFromConfigToHtml();
+
