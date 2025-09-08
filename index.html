@@ -5,26 +5,21 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://dipped.dev/static/plugins/discordwidget/index.js"></script>
-<p>Online players: 
-  <span class="stat-number minecraft-online-players">Loading...</span>
-</p>
-
 <script>
 async function updatePlayerCount() {
   try {
-    const response = await fetch("https://mcapi.us/server/status?ip=empirelegacy.asia&port=25565");
+    const response = await fetch("https://mcapi.us/server/status?ip=eplsmp.online&port=25565");
     const data = await response.json();
 
-    // tìm đến span
     const span = document.querySelector(".minecraft-online-players");
 
     if (data.online) {
-      span.textContent = data.players.now + " / " + data.players.max;
+      span.textContent = data.players.now; // chỉ số người chơi
     } else {
-      span.textContent = "Offline";
+      span.textContent = "0"; // hoặc "Offline"
     }
   } catch (error) {
-    document.querySelector(".minecraft-online-players").textContent = "Error";
+    document.querySelector(".minecraft-online-players").textContent = "0";
     console.error(error);
   }
 }
@@ -237,6 +232,7 @@ setInterval(updatePlayerCount, 60000);
 <script src="https://kit.fontawesome.com/cbf5ee59c8.js" crossorigin="anonymous"></script>
 
 </html>
+
 
 
 
