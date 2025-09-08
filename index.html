@@ -13,10 +13,10 @@ async function updatePlayerCount() {
 
     const span = document.querySelector(".minecraft-online-players");
 
-    if (data.online) {
-      span.textContent = data.players.now; // chỉ số người chơi
+    if (data.status === "success" && data.online) {
+      span.textContent = data.players.now;
     } else {
-      span.textContent = "0"; // hoặc "Offline"
+      span.textContent = "0";
     }
   } catch (error) {
     document.querySelector(".minecraft-online-players").textContent = "0";
@@ -232,6 +232,7 @@ setInterval(updatePlayerCount, 60000);
 <script src="https://kit.fontawesome.com/cbf5ee59c8.js" crossorigin="anonymous"></script>
 
 </html>
+
 
 
 
