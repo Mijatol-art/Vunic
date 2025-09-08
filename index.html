@@ -12,11 +12,12 @@
 <script>
 async function updatePlayerCount() {
   try {
-    // Thay "play.example.com" bằng IP hoặc domain server của bạn
     const response = await fetch("https://mcapi.us/server/status?ip=empirelegacy.asia&port=25565");
     const data = await response.json();
 
+    // tìm đến span
     const span = document.querySelector(".minecraft-online-players");
+
     if (data.online) {
       span.textContent = data.players.now + " / " + data.players.max;
     } else {
@@ -28,10 +29,7 @@ async function updatePlayerCount() {
   }
 }
 
-// gọi 1 lần khi load trang
 updatePlayerCount();
-
-// cập nhật lại sau mỗi 60 giây
 setInterval(updatePlayerCount, 60000);
 </script>
     <link rel="icon" href="images/logo.png">
@@ -239,6 +237,7 @@ setInterval(updatePlayerCount, 60000);
 <script src="https://kit.fontawesome.com/cbf5ee59c8.js" crossorigin="anonymous"></script>
 
 </html>
+
 
 
 
